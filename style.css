@@ -1,0 +1,216 @@
+/* ============================================
+   COLORI AGRIVAR
+   ============================================ */
+/* Definizione delle principali variabili di colore dell’azienda */
+:root {
+    --primary-green: #2f6447;    /* Verde principale Agrivar */
+    --light-green: #8fcf88;      /* Verde chiaro per hover o dettagli */
+    --accent-orange: #ff9500;    /* Arancione accento (per bottoni o highlights) */
+}
+
+/* ============================================
+   STILI GLOBALI
+   ============================================ */
+body {
+    font-family: Arial, sans-serif; /* Font principale leggibile */
+    scroll-behavior: smooth;        /* Scroll fluido per gli anchor link */
+    margin: 0;
+    padding: 0;
+    background-color: #fff;         /* Background chiaro di default */
+    color: #333;                    /* Colore testo principale scuro */
+}
+
+a {
+    text-decoration: none;          /* Rimuove sottolineatura dai link */
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+    background: url('assets/img/Walpaper.jpg') center/cover no-repeat; /* Sfondo immagine centrata e coprente */
+    min-height: 100vh;            /* Altezza minima full screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 56px;             /* Compensa navbar fixed-top */
+    color: white;                 /* Testo bianco leggibile */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4); /* Leggera ombra per contrasto */
+}
+
+.hero h1 {
+    font-size: 3rem;              /* Titolo grande */
+    font-weight: bold;            /* Grassetto */
+}
+
+.hero p {
+    font-size: 1.5rem;            /* Dimensione testo sottotitolo */
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+/* Navbar chiara (default) */
+.navbar {
+    background-color: #ffffff !important; /* Bianco di default */
+}
+
+.navbar .nav-link {
+    color: #333 !important; /* Link scuri per leggibilità su bianco */
+}
+
+.navbar .nav-link:hover {
+    color: var(--primary-green) !important; /* Hover verde Agrivar */
+}
+
+/* Navbar dark mode */
+body.dark-mode .navbar {
+    background-color: #1f1f1f !important; /* Navbar scura in dark mode */
+}
+
+body.dark-mode .navbar .nav-link {
+    color: #e0e0e0 !important; /* Link chiari in dark mode */
+}
+
+body.dark-mode .navbar .nav-link:hover {
+    color: var(--light-green) !important; /* Hover verde chiaro su dark mode */
+}
+
+/* Logo nella navbar */
+.navbar-brand img {
+    height: 40px; /* Altezza fissa logo */
+}
+
+/* ============================================
+   GALLERY
+   ============================================ */
+#gallery {
+    padding: 4rem 0;             /* Spaziatura superiore e inferiore */
+    background-color: #f8f9fa;   /* Sfondo chiaro per contrasto con immagini */
+}
+
+.gallery-card {
+    position: relative;
+    display: block;
+    border-radius: 12px;         /* Angoli arrotondati */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s; /* Animazione hover */
+}
+
+.gallery-card img {
+    width: 100%;                 /* Immagine responsiva */
+    display: block;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Solleva e scala leggermente */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Ombra più marcata */
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8)); /* Gradient scuro per leggibilità */
+    color: white; /* Testo in overlay bianco */
+}
+
+/* ============================================
+   CARDS CHARTS
+   ============================================ */
+.card {
+    border: none;              /* Rimuove bordi */
+    border-radius: 12px;       /* Angoli arrotondati */
+}
+
+/* Altezza massima canvas chart per uniformità */
+.card-body canvas {
+    max-height: 300px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.download-btn {
+    transition: all 0.3s ease; /* Transizione morbida su hover */
+}
+
+.download-btn:hover {
+    transform: translateY(-3px); /* Solleva leggermente */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Ombra hover */
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background-color: #343a40; /* Grigio scuro */
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .gallery-card { height: 250px; } /* Altezza fissa per mobile */
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+body.dark-mode {
+    background-color: #121212 !important; /* Sfondo scuro */
+    color: #e0e0e0 !important;            /* Testo chiaro */
+}
+/* Gallery dark mode */
+body.dark-mode #gallery {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .gallery-card {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .gallery-overlay {
+    background: linear-gradient(transparent, rgba(0,0,0,0.7)) !important;
+}
+
+/* Cards chart dark */
+body.dark-mode .card {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+
+/* Bottoni outline dark mode */
+body.dark-mode .btn-outline-success {
+    color: var(--light-green) !important;
+    border-color: var(--light-green) !important;
+}
+
+body.dark-mode .btn-outline-success:hover {
+    background-color: var(--primary-green) !important;
+    color: white !important;
+}
+
+/* Footer dark mode */
+body.dark-mode footer {
+    background-color: #1f1f1f !important;
+    color: #e0e0e0 !important;
+}
+
+/* ============================================
+   CHART CANVAS
+   ============================================ */
+/* Altezza fissa canvas per uniformità di visualizzazione */
+#analytics canvas {
+    max-height: 300px;   /* Altezza massima */
+    width: 100% !important; /* Occupano tutta la larghezza colonna */
+    display: block;
+    margin: 0 auto;      /* Centra canvas */
+}
